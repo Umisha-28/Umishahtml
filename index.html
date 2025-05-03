@@ -1,31 +1,27 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link href="style.css" rel="stylesheet" type="text/css">
-
-    </head>
     <body>
-        <h1>Welcome to the Space Explorers club!</h1>
-        <ul>
-            <li>Moon Mission</li>
-            <li>Mars Rovers</li>
-            <li>International Space Station</li>
-            <li>Telescope and Stars</li>
-            <li>Black Holes Mysteries</li>
+    <p>Click the button to get a time-based greeting:</p>
+    <button onclick="myFunction()">Try it</button>
+    <p id="hour"></p>
+    <p id="greet"></p>
+    <script>
+        function myFunction() {
+            var greeting;
+            var time = new Date().getHours();
 
-        </ul>
-        <p>
-            Space exploration has always 
-            captivated human imagination.
-            It's a journey to the unknown! 
-        </p>
-        <p>
-        From the Moon to distant galaxies,
-        we continue to explore the 
-        vastness of space.
-        </p>
-        <a href="#">Join our Mission</a>
-        <a href="#">Latest Space Mission</a>
-        <a href="#">Gallery of the Universe</a>
+            if (time<10) {
+                greeting = "Good Morning"
+            }
+            else if (time < 20) {
+                greeting = "Good Day"
+            }
+            else {
+                greeting = "Good Evening"
+            }
+            document.getElementById("hour").innerHTML = "Current Hour is :" + time;
+            document.getElementById("greet").innerHTML = greeting;
+        }
+    </script>
     </body>
 </html>
